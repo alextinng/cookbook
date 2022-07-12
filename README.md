@@ -1,2 +1,2 @@
-# jarvis
-get you free from simple, repeated works.
+# cookbook
+open it when you have no idea how to cook.
