@@ -16,7 +16,7 @@ public class CacheableObject<T> {
         return data;
     }
 
-    public static <T> CacheableObject<T> asObject(T data) {
+    public static <T> CacheableObject<T> asCacheableObject(T data) {
         CacheableObject<T> obj = new CacheableObject<>();
         obj.data = data;
 
