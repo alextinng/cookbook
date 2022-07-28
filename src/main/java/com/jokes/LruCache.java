@@ -6,24 +6,24 @@ import java.util.concurrent.TimeUnit;
 
 public class LruCache<T> extends LinkedHashMap<String, CacheableObject<T>> {
     // 对象缓存时间，默认1小时
-    private Long cacheSeconds;
+    private Long cacheMillis;
 
     LruCache() {
-        cacheSeconds = TimeUnit.HOURS.toMillis(1);
+        cacheMillis = TimeUnit.HOURS.toMillis(1);
     }
 
     @Override
     public boolean removeEldestEntry(Map.Entry<String, CacheableObject<T>> eldest) {
         Long createTime = eldest.getValue().getCreateTime();
 
-        return System.currentTimeMillis() - createTime > cacheSeconds;
+        return System.currentTimeMillis() - createTime > cacheMillis;
     }
 
-    public Long getCacheSeconds() {
-        return cacheSeconds;
+    public Long getCacheMillis() {
+        return cacheMillis;
     }
 
-    public void setCacheSeconds(Long cacheSeconds) {
-        this.cacheSeconds = cacheSeconds;
+    public void setCacheMillis(Long cacheMillis) {
+        this.cacheMillis = cacheMillis;
     }
 }
